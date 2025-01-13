@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieApplication.Models;
+using MovieApplication.Models.Repository.IRepository;
 using System.Diagnostics;
 
 namespace MovieApplication.Controllers
@@ -7,15 +8,18 @@ namespace MovieApplication.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMovieServiceRepository _movieServiceRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMovieServiceRepository movieServiceRepository)
         {
             _logger = logger;
+            _movieServiceRepository = movieServiceRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var movieCards = await _movieServiceRepository.GetMovieCardsAsync();
+            return View(movieCards);
         }
 
         public IActionResult Privacy()

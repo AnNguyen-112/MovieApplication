@@ -2,7 +2,31 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model List<MovieApplication.Models.ViewModels.MovieCardVM>
+
+<div class="movie-list">
+    @if (Model == null || !Model.Any())
+    {
+        <p>No movies available</p>
+        Console.WriteLine(Model);
+    }
+    else
+    {
+        @foreach (var movie in Model)
+        {
+            <div>
+                <!-- Reference the partial view with the model -->
+                @Html.Partial("_MovieCard", movie)
+            </div>
+        }
+
+    }
+
+</div>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
