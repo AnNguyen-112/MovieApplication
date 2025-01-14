@@ -19,7 +19,7 @@ namespace MovieApplication.Controllers
         public async Task<IActionResult> Index()
         {
             var movieCards = await _movieServiceRepository.GetMovieCardsAsync();
-            return View(movieCards);
+            return View(movieCards);                                
         }
 
         public IActionResult Privacy()

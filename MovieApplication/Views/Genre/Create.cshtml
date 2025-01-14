@@ -1,5 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Genre
+<h1>Add New Genre</h1>
+
+<form class="container" method="post">
+    <div class="my-3">
+        <label>Enter Genre Name</label>
+        <input type="text" name="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary" />
+</form>
