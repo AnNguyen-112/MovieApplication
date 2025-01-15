@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Movie>;
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {          
+            <partial  name="_MovieCard" model="item"></partial>  
+        }
+    </div>
+</div>
+
+
+
+
+

@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repository
 {
-    public class CastRepository : BaseRepository<Cast>, ICastRepository
+    public class MovieRepository: BaseRepository<Movie>, IMovieRepository
     {
-
-        public CastRepository(MovieDbContext movieDbcontext) : base(movieDbcontext) 
+        
+        public MovieRepository(MovieDbContext context) : base(context)
         {
-            
+
+           
+
         }
+
+        
+
+        
     }
 }

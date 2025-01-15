@@ -56,6 +56,7 @@ namespace Infrastructure.Context
             // Defining composite key for MovieGenre as an example
             modelBuilder.Entity<MovieGenre>()
                 .HasKey(mg => new { mg.GenreId, mg.MovieId });
+        
         }
 
     }

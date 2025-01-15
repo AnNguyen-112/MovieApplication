@@ -6,6 +6,9 @@ namespace ApplicationCore.Entities
 {
     public class Movie
     {
+
+        
+
         [Key]
         public int Id { get; set; }
 
@@ -59,5 +62,7 @@ namespace ApplicationCore.Entities
         public string? UpdatedBy { get; set; }
 
         public DateTime? UpdatedDate { get; set; }
+    
+        
     }
 }

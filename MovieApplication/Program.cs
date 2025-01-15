@@ -3,7 +3,7 @@ using Infrastructure.Context;
 using Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using MovieApplication.Mappings;
-using MovieApplication.Models.Repository.IRepository;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +20,7 @@ builder.Services.AddAutoMapper(typeof(MovieProfile));
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
-builder.Services.AddScoped<IMovieServiceRepository, MovieService>();
+//builder.Services.AddScoped<IMovieServiceRepository, MovieService>();
 builder.Services.AddScoped<ICastRepository, CastRepository>();
 builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 builder.Services.AddControllersWithViews();
